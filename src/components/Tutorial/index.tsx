@@ -336,7 +336,7 @@ export default function Tutorial() {
                   <div style={{ textAlign: "center", fontSize: "smaller" }}>
                     {t("tutorial.aboutBody2")}
                     <a
-                      href="https://rubensantana.ga"
+                      href="https://ruben.to"
                       className={classes.link}
                       target="_blank"
                       rel="noopener noreferrer"

@@ -29,8 +29,8 @@ export const VM = {
   // chainId: 1337, // local
   chainId: 1, //Ethereum mainnet chain id
   minDeposit: 0.02,
-  // minTimeLimit: 5,
-  minTimeLimit: 0,
+  minTimeLimit: 5,
+  // minTimeLimit: 0,
   feeDivisor: null,
 
   /*--------------------------------------------------

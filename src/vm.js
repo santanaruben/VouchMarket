@@ -8,7 +8,7 @@ const CONTRACTBLOCK = 13294121;
 
 // Compiled contract
 // var VMjson = require("./contracts/VouchMarket.json");
-var VMjson = require("./contracts/VM.json");
+var VMjson = require("./contracts/VouchMarket.json");
 
 const notify = (msg, time) =>
   toast(msg, {

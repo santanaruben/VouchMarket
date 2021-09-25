@@ -4,7 +4,7 @@ const Web3 = require("web3");
 const Contract = require("@truffle/contract");
 
 // Block of deployed contract
-const CONTRACTBLOCK = 27072310;
+const CONTRACTBLOCK = 13294121;
 
 // Compiled contract
 // var VMjson = require("./contracts/VouchMarket.json");
@@ -26,8 +26,8 @@ export const VM = {
   account: null, //User actual account
   contract: null, //Contract
   VouchMarket: null, //Contract instance
-  // chainId: 1337, //Ethereum mainnet chain id
-  chainId: 42, //Ethereum mainnet chain id
+  // chainId: 1337, // local
+  chainId: 1, //Ethereum mainnet chain id
   minDeposit: 0.02,
   // minTimeLimit: 5,
   minTimeLimit: 0,
@@ -60,7 +60,8 @@ export const VM = {
       await VM.contract.setProvider(VM.web3.currentProvider);
       // VM.VouchMarket = await VM.contract.deployed();
       VM.VouchMarket = await VM.contract.at(
-        "0x96f92dCBBf48a63Aac79DFff7De3eE5FAC0a8AC4"
+        // "0x96f92dCBBf48a63Aac79DFff7De3eE5FAC0a8AC4" //kovan
+        "0xF77902D93FBAe39Bb969bB9E7391526de4619a3E"
       );
       await checkChainId();
       await VM.stateVariables();
@@ -308,7 +309,7 @@ export async function LogWithdrawn(idProposal, withdrawer) {
   var log = VM.VouchMarket.getPastEvents("LogWithdrawn", {
     filter: {
       idProposal: idProposal,
-      withdrawer: withdrawer, // cambiar el filtro por withdrawer
+      withdrawer: withdrawer,
     },
     fromBlock: CONTRACTBLOCK,
     toBlock: "latest",

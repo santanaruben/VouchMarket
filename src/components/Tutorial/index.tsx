@@ -333,6 +333,36 @@ export default function Tutorial() {
 
                   <br />
                   <br />
+
+                  <p style={{ textAlign: "center" }}>
+                    <a href={"https://github.com/santanaruben/vouchmarket"}>
+                      <img
+                        src={
+                          "https://img.shields.io/badge/github-black?style=flat&logo=github"
+                        }
+                        alt="github"
+                      />
+                    </a>
+                    <a href={"https://t.me/vouchmarket"}>
+                      <img
+                        src={
+                          "https://img.shields.io/badge/telegram-blue?style=flat&logo=telegram"
+                        }
+                        alt="telegram"
+                      />
+                    </a>
+                    <a href={"https://twitter.com/vouchmarket"}>
+                      <img
+                        src={
+                          "https://img.shields.io/badge/twitter-lightblue?style=flat&logo=twitter"
+                        }
+                        alt="twitter"
+                      />
+                    </a>
+                  </p>
+
+                  <br />
+                  <br />
                   <div style={{ textAlign: "center", fontSize: "smaller" }}>
                     {t("tutorial.aboutBody2")}
                     <a

@@ -28,7 +28,9 @@
   <a href="#license">License</a>
 </p>
 
+<p align="center">
 ![screenshot](https://github.com/santanaruben/VouchMarket/blob/main/Animation.gif)
+</p>
 
 ## Motivation
 

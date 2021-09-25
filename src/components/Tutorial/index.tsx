@@ -335,7 +335,10 @@ export default function Tutorial() {
                   <br />
 
                   <p style={{ textAlign: "center" }}>
-                    <a href={"https://github.com/santanaruben/vouchmarket"}>
+                    <a
+                      href={"https://github.com/santanaruben/vouchmarket"}
+                      style={{ margin: "10px" }}
+                    >
                       <img
                         src={
                           "https://img.shields.io/badge/github-black?style=flat&logo=github"
@@ -343,7 +346,10 @@ export default function Tutorial() {
                         alt="github"
                       />
                     </a>
-                    <a href={"https://t.me/vouchmarket"}>
+                    <a
+                      href={"https://t.me/vouchmarket"}
+                      style={{ margin: "10px" }}
+                    >
                       <img
                         src={
                           "https://img.shields.io/badge/telegram-blue?style=flat&logo=telegram"
@@ -351,7 +357,10 @@ export default function Tutorial() {
                         alt="telegram"
                       />
                     </a>
-                    <a href={"https://twitter.com/vouchmarket"}>
+                    <a
+                      href={"https://twitter.com/vouchmarket"}
+                      style={{ margin: "10px" }}
+                    >
                       <img
                         src={
                           "https://img.shields.io/badge/twitter-lightblue?style=flat&logo=twitter"

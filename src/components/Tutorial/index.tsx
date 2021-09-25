@@ -338,6 +338,8 @@ export default function Tutorial() {
                     <a
                       href={"https://github.com/santanaruben/vouchmarket"}
                       style={{ margin: "10px" }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <img
                         src={
@@ -349,6 +351,8 @@ export default function Tutorial() {
                     <a
                       href={"https://t.me/vouchmarket"}
                       style={{ margin: "10px" }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <img
                         src={
@@ -360,6 +364,8 @@ export default function Tutorial() {
                     <a
                       href={"https://twitter.com/vouchmarket"}
                       style={{ margin: "10px" }}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <img
                         src={

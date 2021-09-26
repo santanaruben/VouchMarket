@@ -7,7 +7,6 @@ const Contract = require("@truffle/contract");
 const CONTRACTBLOCK = 13294121;
 
 // Compiled contract
-// var VMjson = require("./contracts/VouchMarket.json");
 var VMjson = require("./contracts/VouchMarket.json");
 
 const notify = (msg, time) =>
@@ -27,8 +26,9 @@ export const VM = {
   contract: null, //Contract
   VouchMarket: null, //Contract instance
   // chainId: 1337, // local
+  // chainId: 42, //Ethereum kovan chain id
   chainId: 1, //Ethereum mainnet chain id
-  minDeposit: 0.02,
+  minDeposit: 0.013,
   minTimeLimit: 5,
   // minTimeLimit: 0,
   feeDivisor: null,
@@ -61,7 +61,7 @@ export const VM = {
       // VM.VouchMarket = await VM.contract.deployed();
       VM.VouchMarket = await VM.contract.at(
         // "0x96f92dCBBf48a63Aac79DFff7De3eE5FAC0a8AC4" //kovan
-        "0xF77902D93FBAe39Bb969bB9E7391526de4619a3E"
+        "0xF77902D93FBAe39Bb969bB9E7391526de4619a3E" //mainnet
       );
       await checkChainId();
       await VM.stateVariables();
@@ -140,6 +140,13 @@ export async function checkChainId() {
     return false;
   }
   return true;
+}
+
+export async function getGasPrice() {
+  await VM.web3.eth.getGasPrice(async function (e, r) {
+    let a = await VM.web3.utils.fromWei(r, "gwei");
+    return a;
+  });
 }
 
 /*--------------------------------------------------

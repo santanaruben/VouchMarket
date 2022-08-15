@@ -146,6 +146,23 @@ export default function Proposals() {
             });
           if (graphData.data) {
             let picture = graphData.data.photo;
+            if(picture==="") {
+              const graphURL =
+                "https://api.thegraph.com/subgraphs/name/kleros/proof-of-humanity-mainnet";
+              const ipfs = "https://ipfs.kleros.io";
+              // ' + row.user.toLowerCase() + '
+              let graphQuery = '{submission(id:"' + row.user.toLowerCase() + '"){requests(orderBy: creationTime orderDirection: desc first: 1) {evidence(orderBy: creationTime, first: 1) {URI}}}}';
+              let graphDataPic = await axios.post(graphURL, { query: graphQuery });
+              if (graphDataPic.data) {
+                let submission = await axios.get(
+                  ipfs + graphDataPic.data.data.submission.requests[0].evidence[0].URI
+                );
+                let registrantFile = await axios.get(
+                  ipfs + submission.data.fileURI
+                );
+                picture = ipfs.concat(registrantFile.data.photo);
+              }
+            }
             return { ...row, pic: picture };
           } else {
             return { ...row, pic: null };

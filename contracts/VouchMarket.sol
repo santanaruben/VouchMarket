@@ -133,6 +133,7 @@ contract VouchMarket {
         Proposal storage thisProposal = proposalMap[idProposal];
         uint256 amount = msg.value;
         require(amount > 0, "money?");
+        require(msg.sender != voucher, "Voucher must not be self address");
         uint64 timeLimit = uint64(block.timestamp) + addedTime;
         thisProposal.user = msg.sender;
         thisProposal.amount = amount;
